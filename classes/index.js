@@ -11,7 +11,7 @@ module.exports.conjugateVerb = function(verb) {
 	json['tenses'] = {};
 
 	for (const tense of tenses) {
-		json['tenses'][tense.toLowerCase().replace('_', ' ')] = [];
+		json['tenses'][tense.toLowerCase().split('_').join(' ')] = [];
 
 		for (var pronoun of Object.keys(pronouns)) {
 			try {
@@ -21,7 +21,7 @@ module.exports.conjugateVerb = function(verb) {
 					pronoun = 'j\'';
 				}
 
-				json['tenses'][tense.toLowerCase().replace('_', ' ')].push({
+				json['tenses'][tense.toLowerCase().split('_').join(' ')].push({
 					pronoun: pronoun,
 					conjugation: conjugation
 				});
