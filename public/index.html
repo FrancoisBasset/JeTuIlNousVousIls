@@ -1,46 +1,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>JeTuIlNousVousIls</title>
+		<title>Je Tu Il Nous Vous Ils</title>
+		<style>
+			* {
+				text-align: center;
+				font-size: 30px;
+			}
+		</style>
 	</head>
 
 	<body>
 		<input type="text" id="verbInput" value="manger" />
 		<button onclick="search()">Rechercher</button>
 
-		<h1 id="verbLabel"></h1>
+		<div id="verb"></div>
 	</body>
 </html>
 
 <script src="js/Conjugation.js"></script>
 <script src="js/Tense.js"></script>
+<script src="js/Verb.js"></script>
 <script>
-	var tenses = [];
+	var verb = null;
 
 	function search() {
-		const verb = document.getElementById('verbInput').value;
-
-		fetch('/' + verb).then(function(response) {
+		fetch('/' + document.getElementById('verbInput').value).then(function(response) {
 			response.json().then(function(json) {
-				const tensesJson = json.response.tenses;
-				document.getElementById('verbLabel').textContent = json.response.verb;
-
-				for (const tenseName of Object.keys(tensesJson)) {
-					const h2 = document.createElement('h2');
-					const table = document.createElement('table');
-
-					const tense = new Tense(tenseName, tensesJson[tenseName]);
-					document.body.appendChild(tense.getElement());
-
-					tenses.push(tense);
-				}
+				verb = new Verb(json.response.verb, json.response.tenses);
 			});
 		})
 	}
 
 	function updateScore() {
-		for (const tense of tenses) {
-			console.log(tense.name + " => " + tense.getNumberOfCorrect());
+		for (const tense of verb.getTenses()) {
+			console.log(tense.getName() + " => " + tense.getNumberOfCorrect());
 		}
 	}
 	

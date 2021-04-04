@@ -1,14 +1,15 @@
 class Tense {
 	#element
+	#name
 	#conjugations = []
 
 	constructor(name, tense) {
-		this.name = name;
+		this.#name = name;
 
 		this.#element = document.createElement('div');
 
-		var nameH3 = document.createElement('h3');
-		nameH3.textContent = name;
+		const nameH3 = document.createElement('h3');
+		nameH3.textContent = this.#name;
 
 		this.#element.appendChild(nameH3);
 
@@ -24,6 +25,10 @@ class Tense {
 
 	getElement() {
 		return this.#element;
+	}
+
+	getName() {
+		return this.#name;
 	}
 	
 	getNumberOfCorrect() {

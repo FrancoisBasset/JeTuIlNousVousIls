@@ -5,15 +5,13 @@ class Conjugation {
 	constructor(pronoun, conjugation) {
 		this.#element = document.createElement('div');
 
-		var pronounLabel = document.createElement('label');
+		const pronounLabel = document.createElement('label');
 		pronounLabel.textContent = pronoun;
-		pronounLabel.style.margin = '10px';
 
-		var conjugationInput = document.createElement('input');
+		const conjugationInput = document.createElement('input');
 		conjugationInput.onkeyup = () => {
 			if (conjugationInput.value == conjugation) {
-				conjugationInput.style.color = 'green';
-				conjugationInput.style.weight = 'bold';
+				conjugationInput.style = 'color: green; weight: bold';
 				conjugationInput.readOnly = true;
 
 				this.#isCorrect = true;
@@ -24,6 +22,7 @@ class Conjugation {
 
 		this.#element.appendChild(pronounLabel);
 		this.#element.appendChild(conjugationInput);
+		this.#element.style = 'margin: 10px';
 	}
 
 	getElement() {
