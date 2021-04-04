@@ -12,33 +12,36 @@
 	</body>
 </html>
 
+<script src="js/Conjugation.js"></script>
+<script src="js/Tense.js"></script>
 <script>
+	var tenses = [];
+
 	function search() {
 		const verb = document.getElementById('verbInput').value;
 
 		fetch('/' + verb).then(function(response) {
 			response.json().then(function(json) {
-				const tenses = json.response.tenses;
+				const tensesJson = json.response.tenses;
 				document.getElementById('verbLabel').textContent = json.response.verb;
 
-				for (const tense of Object.keys(tenses)) {
+				for (const tenseName of Object.keys(tensesJson)) {
 					const h2 = document.createElement('h2');
 					const table = document.createElement('table');
 
-					h2.textContent = tense;
+					const tense = new Tense(tenseName, tensesJson[tenseName]);
+					document.body.appendChild(tense.getElement());
 
-					for (const conjugation of tenses[tense]) {
-						const row = table.insertRow();
-
-						row.insertCell().textContent = conjugation.pronoun;
-						row.insertCell().textContent = conjugation.conjugation;
-					}
-
-					document.body.appendChild(h2);
-					document.body.appendChild(table);
+					tenses.push(tense);
 				}
 			});
 		})
+	}
+
+	function updateScore() {
+		for (const tense of tenses) {
+			console.log(tense.name + " => " + tense.getNumberOfCorrect());
+		}
 	}
 	
 </script>
