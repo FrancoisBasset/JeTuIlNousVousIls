@@ -6,14 +6,14 @@ const tenses = require('./tenses');
 const vowels = require('./vowels');
 
 module.exports.conjugateVerb = function(verb) {
-	var json = {};
+	const json = {};
 	json['verb'] = verb;
 	json['tenses'] = {};
 
 	for (const tense of tenses) {
 		json['tenses'][tense.toLowerCase().split('_').join(' ')] = [];
 
-		for (var pronoun of Object.keys(pronouns)) {
+		for (const pronoun of Object.keys(pronouns)) {
 			try {
 				const conjugation = FrenchVerbs.getConjugation(Lefff, verb, tense, pronouns[pronoun]);
 
