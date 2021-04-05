@@ -3,6 +3,7 @@ class Score {
 
 	constructor() {
 		this.#element = document.getElementById('score');
+		this.#element.innerHTML = '';
 	}
 
 	addTense(tense, count) {

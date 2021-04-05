@@ -8,6 +8,8 @@ class Verb {
 		this.#element = document.getElementById('verb');
 		this.#name = name;
 
+		this.#element.innerHTML = '';
+
 		const verbLabel = document.createElement('label');
 		verbLabel.textContent = this.#name;
 
