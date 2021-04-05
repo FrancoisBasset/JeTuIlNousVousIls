@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.listen(3000, function(res, req) {
+app.listen(3000, function() {
 	console.log('JeTuIlNousVousIls started !');
 });
 

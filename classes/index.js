@@ -13,7 +13,7 @@ module.exports.conjugateVerb = function(verb) {
 	for (const tense of tenses) {
 		json['tenses'][tense.toLowerCase().split('_').join(' ')] = [];
 
-		for (const pronoun of Object.keys(pronouns)) {
+		for (var pronoun of Object.keys(pronouns)) {
 			try {
 				const conjugation = FrenchVerbs.getConjugation(Lefff, verb, tense, pronouns[pronoun]);
 
@@ -30,4 +30,4 @@ module.exports.conjugateVerb = function(verb) {
 	}
 
 	return json;
-}
+};
