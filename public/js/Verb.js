@@ -52,4 +52,12 @@ class Verb {
 			i++;
 		}
 	}
+
+	showAnswers() {
+		for (const tense of this.#tenses) {
+			for (const conjugation of tense.getConjugations()) {
+				conjugation.showAnswer();
+			}
+		}
+	}
 }
