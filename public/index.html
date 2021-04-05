@@ -7,6 +7,14 @@
 				text-align: center;
 				font-size: 30px;
 			}
+
+			#score {
+				position: fixed;
+			}
+
+			#score td {
+				border: 1px solid black;
+			}
 		</style>
 	</head>
 
@@ -14,12 +22,14 @@
 		<input type="text" id="verbInput" />
 		<button onclick="search()">Rechercher</button>
 
+		<table id="score"></table>
 		<div id="verb"></div>
 	</body>
 </html>
 
 <script src="js/Conjugation.js"></script>
 <script src="js/Tense.js"></script>
+<script src="js/Score.js"></script>
 <script src="js/Verb.js"></script>
 <script>
 	var verb = null;
@@ -29,13 +39,6 @@
 			response.json().then(function(json) {
 				verb = new Verb(json.response.verb, json.response.tenses);
 			});
-		})
+		});
 	}
-
-	function updateScore() {
-		for (const tense of verb.getTenses()) {
-			console.log(tense.getName() + " => " + tense.getNumberOfCorrect());
-		}
-	}
-	
 </script>

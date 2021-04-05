@@ -2,6 +2,7 @@ class Verb {
 	#element
 	#name
 	#tenses = []
+	#score = null
 
 	constructor(name, tenses) {
 		this.#element = document.getElementById('verb');
@@ -12,11 +13,14 @@ class Verb {
 
 		this.#element.appendChild(verbLabel);
 
+		this.#score = new Score();
+
 		for (const tenseName of Object.keys(tenses)) {
 			const tense = new Tense(tenseName, tenses[tenseName], this.getTenses().length);
 			this.#element.appendChild(tense.getElement());
 
 			this.#tenses.push(tense);
+			this.#score.addTense(tenseName, tense.getConjugations().length);
 		}		
 	}
 
@@ -34,6 +38,16 @@ class Verb {
 			if (tense != null) {
 				tense.getConjugations()[0].getElement().lastChild.focus();
 			}
+		}
+	}
+
+	updateScore() {
+		var i = 0;
+
+		for (const tense of this.#tenses) {
+			this.#score.updateTense(i, tense.getNumberOfCorrect());
+
+			i++;
 		}
 	}
 }

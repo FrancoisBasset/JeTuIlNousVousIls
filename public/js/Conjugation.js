@@ -22,7 +22,7 @@ class Conjugation {
 
 				verb.focus(this.#tenseIndex, this.#index + 1);
 
-				updateScore();
+				verb.updateScore();
 			}
 		}
 

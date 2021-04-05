@@ -44,6 +44,6 @@ class Tense {
 			}
 		}
 
-		return count + "/" + this.#conjugations.length;
+		return count + " / " + this.#conjugations.length;
 	}
 }
