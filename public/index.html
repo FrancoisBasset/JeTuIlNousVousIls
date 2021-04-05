@@ -45,9 +45,18 @@
 	var verb = null;
 
 	function search() {
-		fetch('/' + document.getElementById('verbInput').value).then(function(response) {
+		const verbInputValue = document.getElementById('verbInput').value;
+		if (verbInputValue == '') {
+			return;
+		}
+
+		fetch('/' + verbInputValue).then(function(response) {
 			response.json().then(function(json) {
-				verb = new Verb(json.response.verb, json.response.tenses);
+				if (json.success) {
+					verb = new Verb(json.response.verb, json.response.tenses);
+				} else {
+					alert(json.message);
+				}
 			});
 		});
 	}

@@ -25,7 +25,11 @@ module.exports.conjugateVerb = function(verb) {
 					pronoun: pronoun,
 					conjugation: conjugation
 				});
-			} catch (e) {}
+			} catch (e) {
+				if (e.name == 'NotFoundInDict') {
+					return null;
+				}
+			}
 		}
 	}
 
