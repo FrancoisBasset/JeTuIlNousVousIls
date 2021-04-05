@@ -10,7 +10,7 @@
 
 			#score {
 				position: fixed;
-				
+				top: 60px;
 			}
 
 			td {
@@ -24,15 +24,22 @@
 			.finished {
 				background-color: green;
 			}
+
+			#header {
+				position: fixed;
+			}
 		</style>
 	</head>
 
 	<body>
-		<input type="text" id="verbInput" />
-		<button onclick="search()">Rechercher</button>
+		<div id="header">
+			<input type="text" id="verbInput" />
+			<button onclick="search()">Rechercher</button>
+			<button onclick="if (verb != null) verb.showAnswers()">Voir les réponses</button>
+		</div>
 
 		<table id="score" cellspacing="0"></table>
-		<button onclick="if (verb != null) verb.showAnswers()">Voir les réponses</button>
+		
 		<div id="verb"></div>
 	</body>
 </html>
