@@ -1,9 +1,13 @@
 class Conjugation {
 	#element
+	#tenseIndex
+	#index
 	#isCorrect
 
-	constructor(pronoun, conjugation) {
+	constructor(pronoun, conjugation, tenseIndex, index) {
 		this.#element = document.createElement('div');
+		this.#tenseIndex = tenseIndex;
+		this.#index = index;
 
 		const pronounLabel = document.createElement('label');
 		pronounLabel.textContent = pronoun;
@@ -15,6 +19,8 @@ class Conjugation {
 				conjugationInput.readOnly = true;
 
 				this.#isCorrect = true;
+
+				verb.focus(this.#tenseIndex, this.#index + 1);
 
 				updateScore();
 			}

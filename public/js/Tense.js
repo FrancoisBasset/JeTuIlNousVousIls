@@ -3,7 +3,7 @@ class Tense {
 	#name
 	#conjugations = []
 
-	constructor(name, tense) {
+	constructor(name, tense, index) {
 		this.#name = name;
 
 		this.#element = document.createElement('div');
@@ -16,7 +16,7 @@ class Tense {
 		var i = 0;
 
 		for (const conjugation of tense) {
-			this.#conjugations[i] = new Conjugation(conjugation.pronoun, conjugation.conjugation);
+			this.#conjugations[i] = new Conjugation(conjugation.pronoun, conjugation.conjugation, index, i);
 			this.#element.appendChild(this.#conjugations[i].getElement());
 
 			i++;
@@ -29,6 +29,10 @@ class Tense {
 
 	getName() {
 		return this.#name;
+	}
+
+	getConjugations() {
+		return this.#conjugations;
 	}
 	
 	getNumberOfCorrect() {
