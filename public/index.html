@@ -10,10 +10,19 @@
 
 			#score {
 				position: fixed;
+				
 			}
 
-			#score td {
-				border: 1px solid black;
+			td {
+				padding: 10px;
+			}
+
+			.started {
+				background-color: orange;
+			}
+
+			.finished {
+				background-color: green;
 			}
 		</style>
 	</head>
@@ -22,7 +31,7 @@
 		<input type="text" id="verbInput" />
 		<button onclick="search()">Rechercher</button>
 
-		<table id="score"></table>
+		<table id="score" cellspacing="0"></table>
 		<div id="verb"></div>
 	</body>
 </html>
