@@ -57,7 +57,7 @@
 			return;
 		}
 
-		fetch('/' + verbInputValue).then(function(response) {
+		fetch('/jetuilnousvousils/' + verbInputValue).then(function(response) {
 			response.json().then(function(json) {
 				if (json.success) {
 					verb = new Verb(json.response.verb, json.response.tenses);
