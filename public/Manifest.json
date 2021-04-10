@@ -1,0 +1,21 @@
+{
+	"name": "Je Tu Il Nous Vous Ils",
+	"short_name": "Je Tu Il Nous Vous Ils",
+	"description": "Je Tu Il Nous Vous Ils",
+	
+	"start_url": "/",
+
+	"theme_color": "white",
+	"background_color": "white",
+
+	"orientation": "portrait",
+	"display": "fullscreen",
+
+	"icons": [
+		{
+			"src": "icon_256x256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		}
+	]
+}

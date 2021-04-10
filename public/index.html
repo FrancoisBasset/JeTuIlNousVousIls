@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Je Tu Il Nous Vous Ils</title>
+		<link rel="manifest" href="Manifest.json">
 		<style>
 			* {
 				text-align: center;
@@ -67,4 +68,8 @@
 			});
 		});
 	}
+
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('./sw.js');
+	};
 </script>
