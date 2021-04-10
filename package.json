@@ -1,35 +1,35 @@
 {
-  "name": "jetuilnousvousils",
-  "title": "Je Tu Il Nous Vous Ils",
-  "version": "1.0.0",
-  "description": "Verbs game",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FrancoisBasset/JeTuIlNousVousIls.git"
-  },
-  "keywords": [
-    "je",
-    "tu",
-    "il",
-    "nous",
-    "vous",
-    "ils",
-    "verbs",
-    "conjugaison"
-  ],
-  "author": "FrancoisBasset",
-  "bugs": {
-    "url": "https://github.com/FrancoisBasset/JeTuIlNousVousIls/issues"
-  },
-  "homepage": "https://github.com/FrancoisBasset/JeTuIlNousVousIls#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "french-verbs": "^3.1.7",
-    "french-verbs-lefff": "^1.1.7"
-  },
-  "devDependencies": {
-    "eslint": "^7.23.0"
-  }
+	"name": "jetuilnousvousils",
+	"title": "Je Tu Il Nous Vous Ils",
+	"version": "1.0.0",
+	"description": "Verbs game",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FrancoisBasset/JeTuIlNousVousIls.git"
+	},
+	"keywords": [
+		"je",
+		"tu",
+		"il",
+		"nous",
+		"vous",
+		"ils",
+		"verbs",
+		"conjugaison"
+	],
+	"author": "FrancoisBasset",
+	"bugs": {
+		"url": "https://github.com/FrancoisBasset/JeTuIlNousVousIls/issues"
+	},
+	"homepage": "https://github.com/FrancoisBasset/JeTuIlNousVousIls#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"french-verbs": "^3.1.7",
+		"french-verbs-lefff": "^1.1.7"
+	},
+	"devDependencies": {
+		"eslint": "^7.23.0"
+	}
 }
